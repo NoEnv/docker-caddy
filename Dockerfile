@@ -1,7 +1,7 @@
 FROM abiosoft/caddy:builder as builder
 
-ARG version="0.11.5"
-ARG plugins="filebrowser,cors,realip,expires,cache,extauth"
+ARG version="1.0.0"
+ARG plugins="cors,realip,expires,cache,extauth"
 
 RUN go get -v github.com/abiosoft/parent
 
@@ -10,7 +10,7 @@ RUN VERSION=${version} PLUGINS=${plugins} ENABLE_TELEMETRY=false /bin/sh /usr/bi
 FROM alpine:3.8
 LABEL maintainer "NoEnv"
 
-ARG version="0.11.5"
+ARG version="1.0.0"
 LABEL caddy_version="$version"
 
 ENV ACME_AGREE="false"
