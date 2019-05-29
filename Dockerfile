@@ -1,7 +1,7 @@
 FROM abiosoft/caddy:builder as builder
 
 ARG version="1.0.0"
-ARG plugins="cors,realip,expires,cache,extauth"
+ARG plugins="cors,realip,expires,cache,extauth,forwardproxy"
 
 RUN go get -v github.com/abiosoft/parent
 
