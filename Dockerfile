@@ -1,6 +1,6 @@
 FROM abiosoft/caddy:builder as builder
 
-ARG version="1.0.1"
+ARG version="1.0.2"
 ARG plugins="cors,realip,expires,cache,extauth,forwardproxy"
 
 RUN go get -v github.com/abiosoft/parent
@@ -10,7 +10,7 @@ RUN VERSION=${version} PLUGINS=${plugins} ENABLE_TELEMETRY=false /bin/sh /usr/bi
 FROM alpine:3.9
 LABEL maintainer "NoEnv"
 
-ARG version="1.0.1"
+ARG version="1.0.2"
 LABEL caddy_version="$version"
 
 ENV ACME_AGREE="false"
